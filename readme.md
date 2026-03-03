@@ -122,3 +122,28 @@ This project is provided as-is for educational and commercial use.
 ## Support
 
 For issues or questions about Groq API integration, visit [console.groq.com](https://console.groq.com).
+
+
+Full logic flow summary
+
+User Uploads PDF
+        ↓
+Extract Text
+        ↓
+Split into chunks
+        ↓
+Generate embeddings
+        ↓
+Store in FAISS index
+--------------------------------
+User asks question
+        ↓
+Generate question embedding
+        ↓
+Retrieve top-k similar chunks
+        ↓
+Send chunks + question to LLM
+        ↓
+LLM generates grounded answer
+        ↓
+Return answer + context
